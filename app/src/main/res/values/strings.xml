@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Ps5 Emulator Prank</string>
+
+    <!-- onBoarding -->
+
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="onBoarding_title1">LIGHTNING SPEED</string>
+    <string name="onBoarding_title2">BREATHE-TAKING IMMERSION</string>
+    <string name="onBoarding_title3">STUNNING GAME</string>
+    <string name="onBoarding_title4">Your journey begins here.</string>
+    <string name="onBoarding_subtitle1">Experience lightning-fast</string>
+    <string name="onBoarding_subtitle2">ultra-high speed UFS 2.2</string>
+    <string name="onBoarding_subtitle3">adaptive triggers and 3D Audio</string>
+    <string name="onBoarding_subtitle4">Experience lightning-fast loading with an
+                        ultra-high speed UFS 2.2, deeper immersion with
+                        support for haptic feedback, adaptive
+                        triggers and 3D Audio and an all-new
+                        generation of incredible games.</string>
+    <string name="privacy_policy">"By using this app, I agree to it's Privacy policy"</string>
+    <string name="lets_start">Let\'s Start</string>
+
+    <!-- Splash Screen -->
+
+    <string name="splashTitle">PLAY HAS NO LIMITS</string>
+    <string name="splashTitle2">Ps5 Prank Emulator</string>
+
+    <string name="todo">TODO</string>
+    <string name="button">Button</string>
+
+
+</resources>

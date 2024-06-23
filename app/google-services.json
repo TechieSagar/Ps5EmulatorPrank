@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "108962547846",
+    "project_id": "ps5-emulator-prank",
+    "storage_bucket": "ps5-emulator-prank.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108962547846:android:4ce89b78b370e3108d2907",
+        "android_client_info": {
+          "package_name": "com.techietech.ps5emulatorprank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDeOZbZblfWJaJX70ph1zj8SQj-pPwIfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

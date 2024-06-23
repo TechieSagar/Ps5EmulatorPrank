@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud_main"
+    tools:context=".MainActivity">
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/image_slider"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/border"
+            android:backgroundTint="@color/white"
+
+            app:iss_auto_cycle="true"
+
+            app:iss_placeholder="@color/transparent"
+            app:iss_period="1000"
+            app:iss_delay="2000"
+            app:iss_text_align="CENTER"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+
+        <ScrollView
+            android:layout_below="@+id/image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="700dp">
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:text="Button"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Play Games"
+                            android:background="@drawable/corner"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"/>
+
+                        <LinearLayout
+                            android:id="@+id/cardView"
+                            android:layout_width="170dp"
+                            android:layout_height="130dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/items_corner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="8dp"
+                                    app:civ_border_width="1dp"
+                                    app:civ_border_color="@color/colorWhiteCreamy"
+                                    android:src="@mipmap/ic_launcher" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ps4_games"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cardView2"
+                            android:layout_width="170dp"
+                            android:layout_height="130dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/items_corner"
+                            app:layout_constraintStart_toStartOf="@+id/button"
+                            app:layout_constraintTop_toBottomOf="@+id/button">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="8dp"
+                                    app:civ_border_width="1dp"
+                                    app:civ_border_color="@color/colorWhiteCreamy"
+                                    android:src="@mipmap/ic_launcher" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ps4_games"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/cardView3"
+                            android:layout_width="170dp"
+                            android:layout_height="130dp"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:background="@drawable/items_corner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="8dp"
+                                    app:civ_border_width="1dp"
+                                    app:civ_border_color="@color/colorWhiteCreamy"
+                                    android:src="@mipmap/ic_launcher" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ps4_games"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="170dp"
+                            android:layout_height="130dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="@drawable/items_corner"
+                            app:layout_constraintStart_toStartOf="@+id/cardView2"
+                            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="100dp"
+                                    android:layout_height="100dp"
+                                    android:layout_margin="8dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="8dp"
+                                    app:civ_border_width="1dp"
+                                    app:civ_border_color="@color/colorWhiteCreamy"
+                                    android:src="@mipmap/ic_launcher" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/ps4_games"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+</RelativeLayout>
