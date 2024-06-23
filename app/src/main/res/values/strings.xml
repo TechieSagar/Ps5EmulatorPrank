@@ -27,6 +27,8 @@
 
     <string name="todo">TODO</string>
     <string name="button">Button</string>
+    <string name="play_games">Play Games</string>
+    <string name="game">game</string>
 
 
 </resources>
