@@ -25,5 +25,10 @@
 -keep class com.techietech.ps5emulatorprank.OnBoarding
 -keep class com.techietech.ps5emulatorprank.PrefManager
 
+
+
 -dontwarn org.conscrypt.Conscrypt
 -dontwarn org.conscrypt.OpenSSLProvider
+
+-dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
+-dontwarn android.media.LoudnessCodecController

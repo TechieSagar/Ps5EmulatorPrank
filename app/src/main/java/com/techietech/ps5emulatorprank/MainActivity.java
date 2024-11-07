@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        ScreenView = findViewById(R.id.relativeLayout);
+        //ScreenView = findViewById(R.id.relativeLayout);
 
         FirebaseApp.initializeApp(/*context=*/ this);
         FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
