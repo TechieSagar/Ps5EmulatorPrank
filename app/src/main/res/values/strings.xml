@@ -25,10 +25,19 @@
     <string name="splashTitle">PLAY HAS NO LIMITS</string>
     <string name="splashTitle2">Ps5 Prank Emulator</string>
 
+    <!-- MainActivity -->
+
     <string name="todo">TODO</string>
     <string name="button">Button</string>
     <string name="play_games">Play Games</string>
-    <string name="game">game</string>
+    <string name="upload_data">Upload Data</string>
+    <string name="upcoming_games">Upcoming Games</string>
+    <string name="games_list">Games List</string>
+    <string name="aaa_titles">Top Titles</string>
+    <string name="games_images">Games Images</string>
+    <string name="title_activity_play_games">PlayGamesActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>">
 
 
 </resources>
