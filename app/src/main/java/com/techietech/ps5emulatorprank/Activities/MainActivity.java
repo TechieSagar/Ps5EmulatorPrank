@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button nextBtn,nextScreen, play_button, upload_button;
     FloatingActionButton fab;
-    LinearLayout dotsLayout;
+    LinearLayout dotsLayout,gameList;
     ViewPager viewPager;
     private InterstitialAd mInterstitialAd;
     private static final String TAG = "MainActivity";
@@ -55,14 +55,17 @@ public class MainActivity extends AppCompatActivity {
         //dotsLayout = findViewById(R.id.dotsLayout);
         //viewPager = findViewById(R.id.slider);
 
+        gameList = findViewById(R.id.cardView2);
+
         play_button = findViewById(R.id.play_button);
-        upload_button = findViewById(R.id.upload_button);
+        //upload_button = findViewById(R.id.upload_button);
         fab = findViewById(R.id.fab);
 
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, PlayGamesActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -70,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, UploadActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        gameList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                 startActivity(intent);
             }
         });

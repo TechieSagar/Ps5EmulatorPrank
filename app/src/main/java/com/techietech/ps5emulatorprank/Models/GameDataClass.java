@@ -6,6 +6,16 @@ public class GameDataClass {
     private String gameImage;
     private String gamePlatform;
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    private String key;
+
     public String getGameName() {
         return gameName;
     }
@@ -29,5 +39,8 @@ public class GameDataClass {
         this.gamePlatform = gamePlatform;
     }
 
+    public GameDataClass() {
+
+    }
 
 }
