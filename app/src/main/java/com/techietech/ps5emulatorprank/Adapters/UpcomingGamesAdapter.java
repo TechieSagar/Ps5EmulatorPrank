@@ -6,47 +6,51 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.techietech.ps5emulatorprank.Activities.DetailsActivity;
 import com.techietech.ps5emulatorprank.Models.PlayGamesData;
+import com.techietech.ps5emulatorprank.Models.UpcomingGameData;
 import com.techietech.ps5emulatorprank.R;
 
 import java.util.List;
 
-public class PlayGamesAdapter extends RecyclerView.Adapter<MyViewHolderDetails>{
+import de.hdodenhof.circleimageview.CircleImageView;
+
+public class UpcomingGamesAdapter extends RecyclerView.Adapter<MyViewHolderUpcomingGames>{
 
     private Context context;
-    private List<PlayGamesData> playGamesDataList;
+    private List<UpcomingGameData> upcomingGameDataList;
 
-    public PlayGamesAdapter(Context context, List<PlayGamesData> playGamesDataList) {
+    public UpcomingGamesAdapter(Context context, List<UpcomingGameData> upcomingGameDataList) {
         this.context = context;
-        this.playGamesDataList = playGamesDataList;
+        this.upcomingGameDataList = upcomingGameDataList;
     }
 
     @NonNull
     @Override
-    public MyViewHolderDetails onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_play_games_items,parent,false);
-        return new MyViewHolderDetails(view);
+    public MyViewHolderUpcomingGames onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_upcoming_games_items,parent,false);
+        return new MyViewHolderUpcomingGames(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolderDetails holder, int position) {
-        holder.recGameName.setText(playGamesDataList.get(position).getGameName());
+    public void onBindViewHolder(@NonNull MyViewHolderUpcomingGames holder, int position) {
+        Glide.with(holder.recGameImageUrl.getContext()).load(upcomingGameDataList.get(position).getGameImage()).into(holder.recGameImageUrl);
+        holder.recGameName.setText(upcomingGameDataList.get(position).getGameName());
+        holder.recGamePlatform.setText(upcomingGameDataList.get(position).getGamePlatform());
+        holder.recGameReleaseDate.setText(upcomingGameDataList.get(position).getGameReleaseDate());
 
-        holder.recCard.setOnClickListener(new View.OnClickListener() {
+        holder.recGameInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsActivity.class);
-                intent.putExtra("gameName", playGamesDataList.get(holder.getAdapterPosition()).getGameName());
-//                intent.putExtra("gameImageUrl", gameDataClassList.get(holder.getAdapterPosition()).getGameImage());
-//                intent.putExtra("gameUrl", gameDataClassList.get(holder.getAdapterPosition()).getGameUrl());
-//                intent.putExtra("gamePlatform", gameDataClassList.get(holder.getAdapterPosition()).getGamePlatform());
-
+                intent.putExtra("gameInfoUrl", upcomingGameDataList.get(holder.getAdapterPosition()).getGameUrl());
                 context.startActivity(intent);
             }
         });
@@ -55,26 +59,28 @@ public class PlayGamesAdapter extends RecyclerView.Adapter<MyViewHolderDetails>{
 
     @Override
     public int getItemCount() {
-        return playGamesDataList.size();
+        return upcomingGameDataList.size();
     }
 }
 
-class MyViewHolder extends RecyclerView.ViewHolder {
+class MyViewHolderUpcomingGames extends RecyclerView.ViewHolder {
     // Add your views here
 
     //CircleImageView recImage;
-    TextView recGameName, recGameImageUrl, recGameUrl, recGamePlatform;
-    CardView recCard;
+    TextView recGameName, recGamePlatform,recGameReleaseDate;
+    CircleImageView recGameImageUrl, recGameInfo;
+//    CardView recCard;
 
 
-    public MyViewHolder(@NonNull View itemView) {
+    public MyViewHolderUpcomingGames(@NonNull View itemView) {
         super(itemView);
 
-//        recImage = itemView.findViewById(R.id.detailImage);
-        recGameName = itemView.findViewById(R.id.recGameName);
-//        recGameImageUrl = itemView.findViewById(R.id.detailGameImageUrl);
-//        recGameUrl = itemView.findViewById(R.id.detailGameUrl);
-//        recGamePlatform = itemView.findViewById(R.id.detailGamePlatform);
-        recCard = itemView.findViewById(R.id.recCard);
+        //recImage = itemView.findViewById(R.id.detailImage);
+        recGameName = itemView.findViewById(R.id.rv_upg_game_name);
+        recGameImageUrl = itemView.findViewById(R.id.rv_upg_game_image);
+        recGameInfo = itemView.findViewById(R.id.rv_upg_game_info);
+        recGamePlatform = itemView.findViewById(R.id.rv_upg_game_platform);
+        recGameReleaseDate = itemView.findViewById(R.id.rv_upg_release_date);
+
     }
 }

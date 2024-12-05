@@ -1,4 +1,4 @@
-package com.techietech.ps5emulatorprank;
+package com.techietech.ps5emulatorprank.Activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -19,6 +19,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.techietech.ps5emulatorprank.Adapters.DetailsAdapter;
+import com.techietech.ps5emulatorprank.Adapters.PlayGamesAdapter;
+import com.techietech.ps5emulatorprank.Models.GameDataClass;
+import com.techietech.ps5emulatorprank.Models.PlayGamesData;
+import com.techietech.ps5emulatorprank.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +30,7 @@ import java.util.List;
 public class PlayGamesActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    List<GameDataClass> gameDataClassList;
+    List<PlayGamesData> playGamesDataList;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
 
@@ -52,25 +56,24 @@ public class PlayGamesActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-        gameDataClassList = new ArrayList<>();
-        DetailsAdapter detailsAdapter = new DetailsAdapter(PlayGamesActivity.this,gameDataClassList);
-        recyclerView.setAdapter(detailsAdapter);
+        playGamesDataList = new ArrayList<>();
+        PlayGamesAdapter playGamesAdapter = new PlayGamesAdapter(PlayGamesActivity.this,playGamesDataList);
+        recyclerView.setAdapter(playGamesAdapter);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("games");
         dialog.show();
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
-            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                gameDataClassList.clear();
+                playGamesDataList.clear();
 
                 for(DataSnapshot itemSnapshot : snapshot.getChildren()){
-                    GameDataClass gameDataClass = itemSnapshot.getValue(GameDataClass.class);
+                    PlayGamesData playGamesData = itemSnapshot.getValue(PlayGamesData.class);
                     //gameDataClass.setKey(itemSnapshot.getKey());
-                    gameDataClassList.add(gameDataClass);
+                    playGamesDataList.add(playGamesData);
                 }
-                detailsAdapter.notifyDataSetChanged();
+                playGamesAdapter.notifyDataSetChanged();
                 dialog.dismiss();
             }
 

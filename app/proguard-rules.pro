@@ -20,10 +20,13 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep class com.techietech.ps5emulatorprank.SplashActivity
--keep class com.techietech.ps5emulatorprank.MainActivity
+-keep class com.techietech.ps5emulatorprank.Activities.SplashActivity
+-keep class com.techietech.ps5emulatorprank.Activities.MainActivity
 -keep class com.techietech.ps5emulatorprank.OnBoarding
 -keep class com.techietech.ps5emulatorprank.PrefManager
+-keep class com.techietech.ps5emulatorprank.Models.GameDataClass
+-keep class com.techietech.ps5emulatorprank.Activities.PlayGamesActivity
+-keep class com.techietech.ps5emulatorprank.Adapters.DetailsAdapter
 
 
 

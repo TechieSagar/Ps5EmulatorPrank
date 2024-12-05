@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.techietech.ps5emulatorprank.Activities.MainActivity;
 import com.techietech.ps5emulatorprank.Adapters.OnBoardingAdapter;
 
 public class OnBoarding extends AppCompatActivity {

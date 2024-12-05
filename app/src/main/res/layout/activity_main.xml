@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background"
-    tools:context=".MainActivity">
+    android:background="@drawable/main_background"
+    tools:context=".Activities.MainActivity">
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/image_slider"
@@ -14,9 +14,7 @@
             android:layout_height="200dp"
             android:background="@drawable/border"
             android:backgroundTint="@color/white"
-
             app:iss_auto_cycle="true"
-
             app:iss_placeholder="@color/transparent"
             app:iss_period="1000"
             app:iss_delay="2000"
@@ -24,6 +22,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+
             />
 
 
@@ -49,7 +48,7 @@
                             android:textColor="@color/black"/>
 
                         <LinearLayout
-                            android:id="@+id/cardView"
+                            android:id="@+id/upcomingGames"
                             android:layout_width="170dp"
                             android:layout_height="130dp"
                             android:orientation="vertical"
@@ -114,7 +113,7 @@
                             android:orientation="vertical"
                             android:background="@drawable/items_corner"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/cardView">
+                            app:layout_constraintTop_toBottomOf="@+id/upcomingGames">
 
                                 <de.hdodenhof.circleimageview.CircleImageView
                                     android:layout_width="90dp"

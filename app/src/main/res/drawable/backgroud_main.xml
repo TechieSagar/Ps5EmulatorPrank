@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <solid
-        android:color="@color/onBoarding_center"/>
+    <corners
+        />
+
+    <padding
+        />
+    <stroke
+        android:color="#96FFFFFF"
+        android:width="2dp" />
+
     <gradient
-        android:centerColor="@color/center_color"
-        android:startColor="@color/start_color"
-        android:endColor="@color/end_color"/>
+        android:centerColor="#0C0CDB"
+        android:startColor="#1A1E28"
+        android:endColor="#1A1E28"
+        android:type="linear"
+        android:angle="90"/>
 </shape>

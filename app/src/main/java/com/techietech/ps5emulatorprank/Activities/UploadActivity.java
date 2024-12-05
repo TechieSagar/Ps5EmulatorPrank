@@ -1,4 +1,4 @@
-package com.techietech.ps5emulatorprank;
+package com.techietech.ps5emulatorprank.Activities;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,13 +21,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
+import com.techietech.ps5emulatorprank.Models.GameDataClass;
+import com.techietech.ps5emulatorprank.R;
 
 public class UploadActivity extends AppCompatActivity {
 
     ImageView uploadImage;
     Button uploadButton;
-    EditText uploadGameName, uploadGameImageUrl,uploadGameUrl;
-    CheckBox ps5,ps4,ps3,pc,xbox,xbox_one,xbox_oe,ps_vita;
+    EditText uploadGameName, uploadGameImageUrl,uploadGameUrl, uploadGameRelease;
+    CheckBox ps5,ps4,ps3,pc,xbox_one,xbox_x,xbox_360,nitendo,psp,ps_vita;
     String imageUrl, gamePlatform;
     Uri uri;
 
@@ -47,7 +49,21 @@ public class UploadActivity extends AppCompatActivity {
         uploadGameName = findViewById(R.id.upload_game_name);
         uploadGameUrl = findViewById(R.id.upload_game_url);
         uploadButton = findViewById(R.id.upload_button);
+        uploadGameRelease = findViewById(R.id.upload_game_release);
+
+        // checkbox variables
         ps5 = findViewById(R.id.checkbox_ps5);
+        ps4 = findViewById(R.id.checkbox_ps4);
+        ps3 = findViewById(R.id.checkbox_ps3);
+        pc = findViewById(R.id.checkbox_pc);
+        xbox_one = findViewById(R.id.checkbox_xbox_one);
+        xbox_x = findViewById(R.id.checkbox_xbox_x);
+        xbox_360 = findViewById(R.id.checkbox_xbox360);
+        nitendo =  findViewById(R.id.checkbox_nitendo);
+        psp = findViewById(R.id.checkbox_psp);
+        ps_vita = findViewById(R.id.checkbox_ps_vita);
+
+
 
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,9 +93,51 @@ public class UploadActivity extends AppCompatActivity {
         String gameName = uploadGameName.getText().toString();
         String gameImageUrl = uploadGameImageUrl.getText().toString();
         String gameUrl = uploadGameUrl.getText().toString();
-        String gamePlatform = "happy";
+        String gameRelease = uploadGameRelease.getText().toString();
+        String gamePlatform = "";
 
-        GameDataClass gameDataClass = new GameDataClass(gameName,gameImageUrl,gameUrl,gamePlatform);
+        if(ps5.isChecked()){
+            gamePlatform = gamePlatform + "Ps5 ";
+        }
+
+        if(ps4.isChecked()){
+            gamePlatform = gamePlatform + "Ps4 ";
+        }
+
+        if(ps3.isChecked()){
+            gamePlatform = gamePlatform + "Ps3 ";
+        }
+
+        if(pc.isChecked()){
+            gamePlatform = gamePlatform + "Pc ";
+        }
+
+        if(xbox_one.isChecked()){
+            gamePlatform = gamePlatform + "Xbox One ";
+        }
+
+        if(xbox_x.isChecked()){
+            gamePlatform = gamePlatform + "Xbox X ";
+        }
+
+        if(xbox_360.isChecked()){
+            gamePlatform = gamePlatform + "Xbox 360 ";
+        }
+
+        if(nitendo.isChecked()){
+            gamePlatform = gamePlatform + "Nitendo ";
+        }
+
+        if(psp.isChecked()){
+            gamePlatform = gamePlatform + "PSP ";
+        }
+
+        if(ps_vita.isChecked()){
+            gamePlatform = gamePlatform + "Ps Vita ";
+        }
+
+
+        GameDataClass gameDataClass = new GameDataClass(gameName,gameImageUrl,gameUrl,gameRelease,gamePlatform);
 
         FirebaseDatabase.getInstance().getReference("games").child(gameName)
                 .setValue(gameDataClass).addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -37,7 +37,25 @@
     <string name="games_images">Games Images</string>
     <string name="title_activity_play_games">PlayGamesActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>">
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="platform_names">Ps5 Ps4 Pc Nintendo</string>
+    <string name="release_date">22 April 2025</string>
+    <string name="game_name">God of war 3</string>
+    <string name="psp">PSP</string>
+    <string name="nitendo">Nitendo</string>
+    <string name="xbox_360">Xbox 360</string>
+    <string name="ps_vita">Ps Vita</string>
+    <string name="xbox_x">Xbox X</string>
+    <string name="xbox_one">Xbox One</string>
+    <string name="pc">Pc</string>
+    <string name="ps3">Ps3</string>
+    <string name="ps4">Ps4</string>
+    <string name="ps5">Ps5</string>
+    <string name="enter_game_release_date">Enter Game Release Date</string>
+    <string name="enter_game_url_info">Enter Game Url info</string>
+    <string name="enter_game_image_url">Enter Game Image Url</string>
+    <string name="enter_game_name">Enter Game Name</string>
+    <string name="upload">upload</string>">
 
 
 </resources>

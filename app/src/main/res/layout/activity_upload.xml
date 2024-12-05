@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="horizontal"
-    tools:context=".UploadActivity">
+    tools:context=".Activities.UploadActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
                 <ImageView
                     android:id="@+id/upload_image"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:src="@drawable/baseline_cloud_upload_24" />
 
@@ -52,20 +52,46 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
+                    android:autofillHints=""
                     android:background="@drawable/lavender_border"
                     android:gravity="start|center_vertical"
-                    android:hint="Enter Game Name"
+                    android:hint="@string/enter_game_name"
+                    android:padding="16dp"
+                    android:textColor="@color/lavender"
+                    tools:ignore="TextFields" />
+
+                <EditText
+                    android:id="@+id/upload_gameImage_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:autofillHints=""
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/enter_game_url_info"
                     android:padding="16dp"
                     android:textColor="@color/lavender" />
 
                 <EditText
-                    android:id="@+id/upload_info_url"
+                    android:id="@+id/upload_game_url"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/lavender_border"
                     android:gravity="start|center_vertical"
-                    android:hint="Enter Url info"
+                    android:hint="@string/enter_game_image_url"
+                    android:padding="16dp"
+                    android:textColor="@color/lavender" />
+
+                <EditText
+                    android:id="@+id/upload_game_release"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:autofillHints=""
+                    android:background="@drawable/lavender_border"
+                    android:gravity="start|center_vertical"
+                    android:hint="@string/enter_game_release_date"
                     android:padding="16dp"
                     android:textColor="@color/lavender" />
 
@@ -87,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Ps5"
+                            android:text="@string/ps5"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
@@ -95,7 +121,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Ps4"
+                            android:text="@string/ps4"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
@@ -103,7 +129,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Ps3"
+                            android:text="@string/ps3"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
@@ -111,7 +137,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Pc"
+                            android:text="@string/pc"
                             android:textColor="@color/lavender" />
 
                     </LinearLayout>
@@ -121,27 +147,27 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-                            android:id="@+id/checkbox_xbox"
+                            android:id="@+id/checkbox_xbox_one"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Xbox One"
+                            android:text="@string/xbox_one"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
-                            android:id="@+id/checkbox_xbox_oe"
+                            android:id="@+id/checkbox_xbox_x"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Xbox One"
+                            android:text="@string/xbox_x"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
-                            android:id="@+id/checkox_xbox"
+                            android:id="@+id/checkbox_ps_vita"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Ps Vita"
+                            android:text="@string/ps_vita"
                             android:textColor="@color/lavender" />
 
                     </LinearLayout>
@@ -151,27 +177,27 @@
                         android:layout_height="wrap_content">
 
                         <CheckBox
-                            android:id="@+id/chebox_xbox"
+                            android:id="@+id/checkbox_xbox360"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Xbox One"
+                            android:text="@string/xbox_360"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
-                            android:id="@+id/checkbox_xox_oe"
+                            android:id="@+id/checkbox_nitendo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Xbox One"
+                            android:text="@string/nitendo"
                             android:textColor="@color/lavender" />
 
                         <CheckBox
-                            android:id="@+id/chekox_xbox"
+                            android:id="@+id/checkbox_psp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="1dp"
-                            android:text="Ps Vita"
+                            android:text="@string/psp"
                             android:textColor="@color/lavender" />
 
                     </LinearLayout>
@@ -185,7 +211,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="50dp"
-                    android:text="upload" />
+                    android:text="@string/upload" />
 
 
             </LinearLayout>

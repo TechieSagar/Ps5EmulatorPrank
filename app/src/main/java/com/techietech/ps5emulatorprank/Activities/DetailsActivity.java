@@ -1,4 +1,4 @@
-package com.techietech.ps5emulatorprank;
+package com.techietech.ps5emulatorprank.Activities;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.techietech.ps5emulatorprank.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

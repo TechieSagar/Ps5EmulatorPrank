@@ -1,4 +1,4 @@
-package com.techietech.ps5emulatorprank;
+package com.techietech.ps5emulatorprank.Activities;
 
 import static com.denzcoskun.imageslider.constants.ScaleTypes.FIT;
 
@@ -26,7 +26,8 @@ import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderF
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.techietech.ps5emulatorprank.Adapters.OnBoardingAdapter;
+import com.techietech.ps5emulatorprank.OnBoarding;
+import com.techietech.ps5emulatorprank.R;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button nextBtn,nextScreen, play_button, upload_button;
     FloatingActionButton fab;
-    LinearLayout dotsLayout,gameList;
+    LinearLayout dotsLayout,gameList, upcomingGames;
     ViewPager viewPager;
     private InterstitialAd mInterstitialAd;
     private static final String TAG = "MainActivity";
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         //viewPager = findViewById(R.id.slider);
 
         gameList = findViewById(R.id.cardView2);
+        upcomingGames = findViewById(R.id.upcomingGames);
 
         play_button = findViewById(R.id.play_button);
         //upload_button = findViewById(R.id.upload_button);
@@ -81,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        upcomingGames.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UpcomingGamesActivity.class);
                 startActivity(intent);
             }
         });

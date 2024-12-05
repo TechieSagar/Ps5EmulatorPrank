@@ -1,4 +1,4 @@
-package com.techietech.ps5emulatorprank;
+package com.techietech.ps5emulatorprank.Activities;
 
 
 
@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+
+import com.techietech.ps5emulatorprank.OnBoarding;
+import com.techietech.ps5emulatorprank.R;
 
 
 @SuppressLint("CustomSplashScreen")
@@ -48,7 +51,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this,OnBoarding.class);
+                Intent intent = new Intent(SplashActivity.this, OnBoarding.class);
                         startActivity(intent);
                         finish();
             }
